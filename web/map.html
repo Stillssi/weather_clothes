@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="css/styles.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Welcome to KokoaTalk</title>
+  </head>
+
+  <body>
+    <div class="welcome">
+      <span class="welcome-header">신향아님, 어서오세요.</span>
+      <span class="today-date">오늘은 9월 23일, 금요일입니다.</span>
+    </div>
+    <div class="map-box">
+      <div id="map" style="width: 480px; height: 300px"></div>
+    </div>
+    <script
+      type="text/javascript"
+      src="//dapi.kakao.com/v2/maps/sdk.js?appkey=?&libraries=services,clusterer,drawing"
+    ></script>
+
+    <script>
+      var mapContainer = document.getElementById("map"), // 지도를 표시할 div
+        mapOption = {
+          center: new kakao.maps.LatLng(37.500293, 126.908031), // 지도의 중심좌표
+          level: 7, // 지도의 확대 레벨
+        };
+
+      var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+
+      var positions = [
+        {
+          title: "집",
+          latlng: new kakao.maps.LatLng(37.48837, 126.940571),
+        },
+        {
+          title: "직장",
+          latlng: new kakao.maps.LatLng(37.517709, 126.886355),
+        },
+      ];
+
+      // 마커 이미지의 이미지 주소입니다
+      var imageSrc =
+        "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png";
+
+      for (var i = 0; i < positions.length; i++) {
+        // 마커 이미지의 이미지 크기 입니다
+        var imageSize = new kakao.maps.Size(24, 35);
+
+        // 마커 이미지를 생성합니다
+        var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize);
+
+        // 마커를 생성합니다
+        var marker = new kakao.maps.Marker({
+          map: map, // 마커를 표시할 지도
+          position: positions[i].latlng, // 마커를 표시할 위치
+          title: positions[i].title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
+          image: markerImage, // 마커 이미지
+        });
+      }
+    </script>
+    <span class="out-time">출근하실 때</span>
+    <div class="weather_info">
+      <div class="weather we">
+        <span>날씨는</span>
+        <img class="weather_img" src="img/cloudy.png" />
+      </div>
+      <div class="weather we">
+        <span>평균기온은</span>
+        <span class="num">26°C</span>
+      </div>
+      <div class="weather">
+        <span>우산은</span>
+        <img class="weather_img" src="img/umbrella.png" />
+      </div>
+    </div>
+    <span class="out-time">퇴근하실 때</span>
+    <div class="weather_info">
+      <div class="weather we">
+        <span>날씨는</span>
+        <img class="weather_img" src="img/rainy.png" />
+      </div>
+      <div class="weather">
+        <span>평균기온은</span>
+        <span class="num">23°C</span>
+      </div>
+      <div class="weather">
+        <span>우산은</span>
+        <img class="weather_img" src="img/umbrella.png" />
+      </div>
+    </div>
+  </body>
+</html>

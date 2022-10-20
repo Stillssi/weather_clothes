@@ -1,0 +1,69 @@
+@import url("https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Roboto+Mono:wght@500&display=swap");
+body {
+  font-family: "Do Hyeon", sans-serif;
+  color: #2e363e;
+  background-color: floralwhite;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+
+  align-items: center;
+}
+.welcome-header {
+  font-size: 30px;
+}
+.today-date {
+  font-size: 15px;
+}
+.welcome {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-bottom: 10px;
+  right: 120px;
+}
+.map-box {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+#map {
+  border-radius: 15px;
+}
+
+.weather_info {
+  display: flex;
+  flex-direction: row;
+}
+
+.weather_img {
+  width: 100px;
+  height: 100px;
+}
+
+.out-time {
+  position: relative;
+  right: 200px;
+  border-bottom: 2px solid black;
+  text-align: left;
+  margin-top: 20px;
+}
+
+.weather {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 10px 35px 10px 35px;
+  padding: 10px;
+  border: 2px solid salmon;
+  border-radius: 5px;
+}
+
+.num {
+  font-size: 50px;
+  margin-top: 15px;
+}
